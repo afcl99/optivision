@@ -1,0 +1,68 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" routerLink="">
+        <img src="assets/images/optivision-logo.png" width="56" height="28">
+      </a>
+  
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item">
+          ¿Quienes somos?
+        </a>
+  
+        <a class="navbar-item" routerLink="list-optometra">
+          Personal
+        </a>
+        
+        
+        <a class="navbar-item">
+          Especialidades
+        </a>
+
+        <nav class="navbar" role="navigation" aria-label="dropdown navigation">
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              OPTOMETRAS
+            </a>
+        
+            <div class="navbar-dropdown">
+              <a class="navbar-item">
+                Productos
+              </a>
+              <a class="navbar-item">
+                Agendamientos
+              </a>
+              <a class="navbar-item" routerLink="list-historia">
+                Historias
+              </a>
+              <a class="navbar-item">
+                  Pagos
+              </a>
+              <a class="navbar-item">
+                  Clientes
+                </a>
+            </div>
+          </div>
+        </nav>
+
+        
+      </div>
+  
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary" routerLink="login">
+              Ingresar
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
