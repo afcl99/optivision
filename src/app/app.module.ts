@@ -24,6 +24,8 @@ import { ViewHistoriaComponent } from './historiaClinica/view-historia/view-hist
 import { EditHistoriaComponent } from './historiaClinica/edit-historia/edit-historia.component';
 import { ListProductoComponent } from './productos/list-producto/list-producto.component';
 import { AddProductoComponent } from './productos/add-producto/add-producto.component';
+import { EditProductoComponent } from './productos/edit-producto/edit-producto.component';
+import { ViewProductoComponent } from './productos/view-producto/view-producto.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { AddProductoComponent } from './productos/add-producto/add-producto.comp
     ViewHistoriaComponent,
     EditHistoriaComponent,
     ListProductoComponent,
-    AddProductoComponent
+    AddProductoComponent,
+    EditProductoComponent,
+    ViewProductoComponent
   ],
   imports: [
     BrowserModule,
