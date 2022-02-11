@@ -1,0 +1,32 @@
+<div class="login-form">
+  <mat-card>
+    <H1>Login</H1>
+    <mat-form-field class = "full-width-input">
+      <input class="input" type="text" matInput placeholder="Username" required>
+    </mat-form-field>
+
+    <mat-form-field class = "full-width-input separator">
+      <input class="input" type="password" matInput placeholder="password" required>
+    </mat-form-field>
+
+    <div class="field is-horizontal">
+        <div class="field-body">
+          <div class="field">
+            <div class="control">
+              <label class="checkbox">
+                <input type="checkbox">
+                Recuerdame
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-grouped">
+        <div class="control">
+          <button type="submit" mat-raised-button color="primery">Ingresar</button>
+          <button routerLink="/forgotPassword" type="submit" mat-raised-button separation color="secundary">Recuperar contraseña</button>
+        </div>
+      </div>
+  </mat-card>
+</div>

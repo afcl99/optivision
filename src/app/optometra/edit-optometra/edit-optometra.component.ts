@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-edit-optometra',
   templateUrl: './edit-optometra.component.html',
-  styleUrls: ['./edit-optometra.component.css']
+  styleUrls: ['./edit-optometra.component.scss']
 })
 export class EditOptometraComponent implements OnInit {
 

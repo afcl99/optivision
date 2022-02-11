@@ -5,10 +5,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './shared/components/header/header.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './login/components/login.component';
 import { AddOptometraComponent } from './optometra/add-optometra/add-optometra.component';
 import { EditOptometraComponent } from './optometra/edit-optometra/edit-optometra.component';
 import { ListOptometraComponent } from './optometra/list-optometra/list-optometra.component';
@@ -27,6 +27,8 @@ import { AddProductoComponent } from './productos/add-producto/add-producto.comp
 import { EditProductoComponent } from './productos/edit-producto/edit-producto.component';
 import { ViewProductoComponent } from './productos/view-producto/view-producto.component';
 
+import { MaterialModule } from "./material/material.module";
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,13 +52,15 @@ import { ViewProductoComponent } from './productos/view-producto/view-producto.c
     ListProductoComponent,
     AddProductoComponent,
     EditProductoComponent,
-    ViewProductoComponent
+    ViewProductoComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
