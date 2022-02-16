@@ -29,6 +29,7 @@ import { ViewProductoComponent } from './productos/view-producto/view-producto.c
 
 import { MaterialModule } from "./material/material.module";
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { BannerComponent } from './shared/components/banner/banner.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +54,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AddProductoComponent,
     EditProductoComponent,
     ViewProductoComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule,
