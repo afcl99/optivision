@@ -1,4 +1,21 @@
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <div class="row between-xs middle-xs header-row">
+      <nav>
+        <a mat-button routerLink="/home" routerLinkActive="active">Home</a>
+        <a mat-button routerLink="/view-producto" routerLinkActive="active">Productos</a>
+      </nav>
+      <nav>
+        <a mat-raised-button routerLink="/login" routerLinkActive="active">
+          <mat-icon>account_circle</mat-icon>
+          Login</a>
+      </nav>
+    </div>
+  </mat-toolbar-row>
+
+</mat-toolbar>
+
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" routerLink="">
         <img src="assets/images/optivision-logo.png" width="56" height="28">
@@ -17,17 +34,17 @@
           ¿Quienes somos?
         </a>
 
-        <a class="navbar-item" routerLink="list-optometra">
+        <a class="navbar-item" routerLink="list-optometra" routerLinkActive="active">
           Personal
         </a>
 
-        <a class="navbar-item">
+        <a class="navbar-item" routerLink="list-optometra" routerLinkActive="active" >
           Especialidades
         </a>
 
         <nav class="navbar" role="navigation" aria-label="dropdown navigation">
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
+            <a class="navbar-link" routerLink="list-optometra" routerLinkActive="active">
               Optometras
             </a>
 
@@ -64,6 +81,4 @@
         </div>
       </div>
     </div>
-  </nav>
-
-
+  </nav> -->

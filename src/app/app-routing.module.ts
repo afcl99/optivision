@@ -9,6 +9,8 @@ import { ListOptometraComponent } from './optometra/list-optometra/list-optometr
 import { AddHistoriaComponent } from './historiaClinica/add-historia/add-historia.component';
 import { ListHistoriaComponent } from './historiaClinica/list-historia/list-historia.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ViewProductoComponent } from "./productos/view-producto/view-producto.component";
+import { ListProductoComponent } from "./productos/list-producto/list-producto.component";
 
 const routes: Routes = [
   {path: "", component:HomeComponent},
@@ -20,6 +22,8 @@ const routes: Routes = [
   {path: "list-optometra", component:ListOptometraComponent},
   {path: "add-historia", component:AddHistoriaComponent},
   {path: "list-historia", component:ListHistoriaComponent},
+  {path: "view-product", component:ViewProductoComponent},
+  {path: "list-products", component:ListProductoComponent},
   {path: "**", component:PageNotFoundComponent},
 
 ];

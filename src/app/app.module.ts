@@ -26,10 +26,12 @@ import { ListProductoComponent } from './productos/list-producto/list-producto.c
 import { AddProductoComponent } from './productos/add-producto/add-producto.component';
 import { EditProductoComponent } from './productos/edit-producto/edit-producto.component';
 import { ViewProductoComponent } from './productos/view-producto/view-producto.component';
+import { HttpClientModule } from "@angular/common/http";
 
 import { MaterialModule } from "./material/material.module";
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { BannerComponent } from './shared/components/banner/banner.component';
+import { ReactiveFormsModule } from "@angular/forms";
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,7 +64,9 @@ import { BannerComponent } from './shared/components/banner/banner.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
