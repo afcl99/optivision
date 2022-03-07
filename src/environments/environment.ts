@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url_api: "https://google.com.co"
+  url_api: 'http://localhost:8081/api/producto'
 };
 
 /*

@@ -1,4 +1,3 @@
-<!-- <app-header></app-header>
 <form [formGroup]="form" (ngSubmit)="saveProduct($event)">
   <mat-card>
     <mat-card-header>
@@ -15,7 +14,7 @@
       <div class="row">
         <div class="col-xs">
           <mat-form-field>
-            <input placeholder="Title" formControlName="title" matInput type="text">
+            <input placeholder="Tle" formControlName="title" matInput type="text">
           </mat-form-field>
         </div>
       </div>
@@ -24,10 +23,10 @@
           <mat-form-field>
             <input placeholder="Price" formControlName="price" matInput type="number">
           </mat-form-field>
-          <div *ngIf="priceField.errors && priceField.dirty">
+          <!-- <div *ngIf="priceField.errors && priceField.dirty">
             <p *ngIf="priceField.hasError('price_invalid')">no te debes pasar de 10000</p>
             <p *ngIf="priceField.hasError('required')">el campo es requerido</p>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="row">
@@ -43,4 +42,5 @@
     </mat-card-actions>
   </mat-card>
 
-</form> -->
+</form>
+

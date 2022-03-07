@@ -1,7 +1,10 @@
-export interface Product {
-  id: string;
-  title: string;
-  price: number;
-  description: string;
-  image: string;
+export class Product {
+  id: number;
+  nombre: string = "";
+  descripcion: string = "";
+  marca: string;
+  referencia: string;
+  material: string;
+  price: number = 239999;
+  image: string = "../../../assets/images/gafas-fondo.jpg";
 }
