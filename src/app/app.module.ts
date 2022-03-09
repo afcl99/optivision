@@ -54,6 +54,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { ProductsListComponent } from './admin/components/products-list/products-list.component';
 import { FormProductsComponent } from './admin/components/form-products/form-products.component';
+import { ProductEditComponent } from './admin/components/product-edit/product-edit.component';
 @NgModule({
   declarations: [
     ProductFormComponent,
@@ -88,6 +89,7 @@ import { FormProductsComponent } from './admin/components/form-products/form-pro
     DashboardComponent,
     ProductsListComponent,
     FormProductsComponent,
+    ProductEditComponent,
     //FormProductComponent
   ],
   imports: [

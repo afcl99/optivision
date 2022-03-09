@@ -19,6 +19,7 @@ import { TableComponent } from './admin/components/table/table.component';
 import { DashboardComponent } from './admin/components/dashboard/dashboard.component';
 import { ProductsListComponent } from './admin/components/products-list/products-list.component';
 import { FormProductsComponent } from './admin/components/form-products/form-products.component';
+import { ProductEditComponent } from './admin/components/product-edit/product-edit.component';
 
 const routes: Routes = [
   {
@@ -48,6 +49,7 @@ const routes: Routes = [
       {path: "dashboard", component: DashboardComponent},
       {path: "products", component: ProductsListComponent},
       {path: "products/create", component: FormProductsComponent},
+      {path: "products/edit/:id", component: ProductEditComponent},
     ]
 
   },
