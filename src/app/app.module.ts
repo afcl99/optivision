@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
-import { LoginComponent } from './login/components/login.component';
+import { LoginComponent } from './auth/components/login/login.component';
 import { AddOptometraComponent } from './optometra/add-optometra/add-optometra.component';
 import { EditOptometraComponent } from './optometra/edit-optometra/edit-optometra.component';
 import { ListOptometraComponent } from './optometra/list-optometra/list-optometra.component';
@@ -27,6 +27,10 @@ import { AddProductoComponent } from './productos/components/add-producto/add-pr
 import { EditProductoComponent } from './productos/components/edit-producto/edit-producto.component';
 import { ViewProductoComponent } from './productos/components/view-producto/view-producto.component';
 import { HttpClientModule } from "@angular/common/http";
+//auntentificacion
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 
 import { MaterialModule } from "./material/material.module";
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -53,10 +57,16 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { ProductsListComponent } from './admin/components/products-list/products-list.component';
-import { FormProductsComponent } from './admin/components/form-products/form-products.component';
+import { FormProductComponent } from './admin/components/form-product/form-product.component';
 import { ProductEditComponent } from './admin/components/product-edit/product-edit.component';
+import { OrderComponent } from './order/components/order/order.component';
+import { ClusterPipe } from './cluster.pipe';
+import { environment } from 'src/environments/environment';
+import { RegisterComponent } from './auth/components/register/register.component';
 @NgModule({
   declarations: [
+    RegisterComponent,
+    OrderComponent,
     ProductFormComponent,
     AppComponent,
     HeaderComponent,
@@ -88,8 +98,9 @@ import { ProductEditComponent } from './admin/components/product-edit/product-ed
     TableComponent,
     DashboardComponent,
     ProductsListComponent,
-    FormProductsComponent,
+    FormProductComponent,
     ProductEditComponent,
+    ClusterPipe,
     //FormProductComponent
   ],
   imports: [
@@ -113,6 +124,9 @@ import { ProductEditComponent } from './admin/components/product-edit/product-ed
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFireStorageModule
     //AdminModule
   ],
   providers: [],

@@ -17,7 +17,8 @@ export class CartService {
   constructor() { }
 
   addCart(product:Product){
-    this.products = [...this.products, product];
+    this.products.push(product)
+    console.log(product)
     this.cart.next(this.products);
   }
 }

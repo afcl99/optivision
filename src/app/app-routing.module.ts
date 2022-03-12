@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/components/login.component';
+import { LoginComponent } from './auth/components/login/login.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { AddOptometraComponent } from './optometra/add-optometra/add-optometra.component';
 import { EditOptometraComponent } from './optometra/edit-optometra/edit-optometra.component';
@@ -18,8 +18,10 @@ import { NavComponent } from './admin/components/nav/nav.component';
 import { TableComponent } from './admin/components/table/table.component';
 import { DashboardComponent } from './admin/components/dashboard/dashboard.component';
 import { ProductsListComponent } from './admin/components/products-list/products-list.component';
-import { FormProductsComponent } from './admin/components/form-products/form-products.component';
+import { FormProductComponent } from './admin/components/form-product/form-product.component';
 import { ProductEditComponent } from './admin/components/product-edit/product-edit.component';
+import { OrderComponent } from './order/components/order/order.component';
+import { RegisterComponent } from './auth/components/register/register.component';
 
 const routes: Routes = [
   {
@@ -31,28 +33,39 @@ const routes: Routes = [
       {path: "products/:id", component:ViewProductoComponent},
       {path: "products", component:ListProductoComponent},
       {path: "add-products", component:AddProductoComponent},
+      {path: "order", component: OrderComponent},
     ]
   },
-  {path: "login", component:LoginComponent},
   {path: "forgotPassword", component:ForgotPasswordComponent},
-  {path: "add-optometra", component:AddOptometraComponent , canActivate: [AdminGuard]},
+  {path: "add-optometra", component:AddOptometraComponent},
   {path: "edit-optometra/:id", component:EditOptometraComponent},
   {path: "list-optometra", component:ListOptometraComponent},
   {path: "add-historia", component:AddHistoriaComponent},
   {path: "list-historia", component:ListHistoriaComponent},
+
   {
     path: "admin",
+    canActivate: [AdminGuard],
     component: NavComponent,
     children: [
       {path: "create", component: ProductFormComponent},
       {path: "table", component: TableComponent},
       {path: "dashboard", component: DashboardComponent},
       {path: "products", component: ProductsListComponent},
-      {path: "products/create", component: FormProductsComponent},
+      {path: "products/create", component: FormProductComponent},
       {path: "products/edit/:id", component: ProductEditComponent},
     ]
 
   },
+  {
+    path: "auth",
+/*     component: NavComponent, */
+    children: [
+      {path: "register", component:RegisterComponent},
+      {path: "login", component:LoginComponent},
+    ]
+  },
+
   //{path: "admin", component: ProductFormComponent},
   {path: "**", component:PageNotFoundComponent},
 
