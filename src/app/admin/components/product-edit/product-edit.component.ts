@@ -1,29 +1,39 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { Product } from "./../../../core/models/product.model";
 import { ProductsService } from "./../../../core/services/products/products.service";
 import { MyValidators } from "./../../../utilis/validators";
 
 @Component({
-  selector: 'app-form-products',
-  templateUrl: './form-products.component.html',
-  styleUrls: ['./form-products.component.scss']
+  selector: 'app-product-edit',
+  templateUrl: './product-edit.component.html',
+  styleUrls: ['./product-edit.component.scss']
 })
-export class FormProductsComponent implements OnInit {
+export class ProductEditComponent implements OnInit {
 
-  form: FormGroup
+  form: FormGroup;
+  id: number = 0;
 
   constructor(
     private formBuilder: FormBuilder,
     private productsService:ProductsService,
-    private router: Router
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) {
     this.buildForm();
   }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe((params: Params)=>{
+      this.id = params["id"];
+      console.log(this.id)
+      this.productsService.getProduct(this.id)
+      .subscribe(product => {
+        this.form.patchValue(product)
+      })
+    });
   }
 
   saveProduct(event: Event){
@@ -31,7 +41,8 @@ export class FormProductsComponent implements OnInit {
     event.preventDefault();
     //if (this.form.valid){
       const product: Product = this.form.value;
-      this.productsService.createProduct(product)
+      console.log("actualizar ",this.id)
+      this.productsService.updateProduct(this.id, product)
       .subscribe((newProduct) => {
         console.log(newProduct);
         this.router.navigate(['./admin/products'])
@@ -40,7 +51,6 @@ export class FormProductsComponent implements OnInit {
   }
   private buildForm(){
     this.form = this.formBuilder.group({
-      id: [, [Validators.required]],
       nombre: ['', [Validators.required]],
       descripcion: ['', [Validators.required]],
       marca: ['', [Validators.required]],
@@ -54,5 +64,4 @@ export class FormProductsComponent implements OnInit {
   get priceField(){
     return this.form.get('price');
   }
-
 }

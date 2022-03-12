@@ -1,9 +1,7 @@
 export class Cita {
     id: number;
-    estado: string = "";
+    estado: string = "false";
     fecha: string = "";
     hora: string = "";
-    idCliente: number;
-    idEmpleado: number;
   }
   

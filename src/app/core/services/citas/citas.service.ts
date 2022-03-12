@@ -14,13 +14,13 @@ export class CitasService {
   ) { }
 
   getAllCitas(){
-    return this.http.get<Cita[]>(`${environment.url_api}/listar`);
+    return this.http.get<Cita[]>(`${environment.url_apiCita}/listar`);
   }
   getCita(id: number){
     return this.http.get<Cita>(`${environment.url_api}/${id}`);
   }
-  createCita(product: Cita){
-    return this.http.post(`${environment.url_api}/citas`, product);
+  createCita(Cita: Cita, id: number){
+    return this.http.post(`${environment.url_apiCita}/guardar/${id}`, Cita);
   }
   updateCita(id: number, changes: Partial<Cita>){
     return this.http.put(`${environment.url_api}/citas/${id}`, changes)

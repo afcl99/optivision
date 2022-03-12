@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -50,10 +49,18 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { DashboardComponent } from './admin/components/dashboard/dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { ProductsListComponent } from './admin/components/products-list/products-list.component';
 import { FormProductsComponent } from './admin/components/form-products/form-products.component';
+
+import { ProductEditComponent } from './admin/components/product-edit/product-edit.component';
+
+import {MatCardModule} from '@angular/material/card';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { CalendarComponent } from './calendar/calendar.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { NgxMatDatetimePickerModule, NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
 
 
 @NgModule({
@@ -90,9 +97,13 @@ import { FormProductsComponent } from './admin/components/form-products/form-pro
     DashboardComponent,
     ProductsListComponent,
     FormProductsComponent,
+    ProductEditComponent,
+    CalendarComponent
     //FormProductComponent
   ],
   imports: [
+    NgxMatTimepickerModule,
+    NgxMatDatetimePickerModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -113,6 +124,9 @@ import { FormProductsComponent } from './admin/components/form-products/form-pro
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatFormFieldModule
     //AdminModule
   ],
   providers: [],
