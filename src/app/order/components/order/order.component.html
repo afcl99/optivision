@@ -4,27 +4,32 @@
     <div *ngIf="(products$) as productList">
       <p *ngIf="productList.length === 0">No hay productos en el carrito</p>
       <div class="row" *ngFor="let productFor of productList">
-        <div class="col-xs-12 col-sm-2 col-md-2 ">
+        <div class="col-xs-8 col-sm-2 col-md-2 ">
           <div class="box">
             <img class="image" src="./../../../../assets//images/gafas-fondo.jpg" alt="">
           </div>
         </div>
         <div class="col-xs-12 col-sm-5 col-md-5 ">
+          {{"Nombre:"}}
           <div class="box">
-            "{{productFor.nombre}}"
-            {{"dsfsfsdfsdfs"}}
-            {{productFor}}
-            {{"productFor.nombre"}}
+            {{"--"}}
+            {{productFor.nombre}}
           </div>
         </div>
         <div class="col-xs-12 col-sm-5 col-md-5 ">
+          {{"Id:"}}
           <div class="box">
-            {{productFor.id | cluster }}
+            {{"--"}}
+            <title>Id del producto</title>
+            {{productFor.id}}
           </div>
         </div>
         <div class="col-xs-12 col-sm-5 col-md-5 ">
+          {{"--"}}
+          {{"Precio:"}}
           <div>
-            "{{'productFor.price'}}"
+            <title>Pecio</title>
+            {{productFor.price}}
           </div>
         </div>
       </div>

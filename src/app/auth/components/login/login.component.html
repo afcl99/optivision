@@ -1,9 +1,11 @@
-<form [formGroup]="form" (ngSubmit)="login($event)">
+<app-header></app-header>
+<div class="login">
+  <form [formGroup]="form" (ngSubmit)="login($event)">
     <mat-card>
       <mat-card-header>
         <mat-card-title>Login</mat-card-title>
       </mat-card-header>
-      <mat-card-content>
+      <mat-card-content class = "full-width-input">
         <div class="row">
           <div class="col-xs">
             <mat-form-field>
@@ -23,6 +25,8 @@
         <button [disabled]="form.invalid" mat-raised-button type="submit">Ingresar</button>
       </mat-card-actions>
     </mat-card>
-    
   </form>
-  
+</div>
+<app-footer></app-footer>
+
+
