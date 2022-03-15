@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { CartService } from './cart.service';
-
 
 @Injectable({
   providedIn: 'root'

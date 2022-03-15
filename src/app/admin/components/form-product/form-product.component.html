@@ -14,7 +14,35 @@
       <div class="row">
         <div class="col-xs">
           <mat-form-field>
-            <input placeholder="Title" formControlName="title" matInput type="text">
+            <input placeholder="Nombre" formControlName="nombre" matInput type="text">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <input placeholder="Descripcion" formControlName="descripcion" matInput type="text">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <input placeholder="Marca" formControlName="marca" matInput type="text">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <input placeholder="Referencia" formControlName="referencia" matInput type="text">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <input placeholder="Material" formControlName="material" matInput type="text">
           </mat-form-field>
         </div>
       </div>
@@ -31,13 +59,6 @@
       </div>
       <div class="row">
         <div class="col-xs">
-          <mat-form-field>
-            <textarea placeholder="Text" formControlName="description" matInput></textarea>
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs">
           <img *ngIf="(image$ | async) as image" [src]="image" alt="">
           <input type="file" (change)="uploadFile($event)">
         </div>
@@ -47,5 +68,5 @@
       <button [disabled]="form.invalid" mat-raised-button type="submit">Guardar</button>
     </mat-card-actions>
   </mat-card>
-  
+
 </form>

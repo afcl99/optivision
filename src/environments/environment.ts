@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url_api: 'http://localhost:8081/api/producto',
+  url_api: 'http://localhost:8081/api/',
   firebase: {
     apiKey: "AIzaSyCvOeiEJjDSNxDDKhL7dnDeRTQldw2K0MA",
     authDomain: "optivision-213cd.firebaseapp.com",

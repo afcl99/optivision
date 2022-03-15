@@ -30,10 +30,14 @@ export class FormProductComponent implements OnInit {
   }
 
   ngOnInit() {
+    {
+
+    }
   }
 
   saveProduct(event: Event) {
     event.preventDefault();
+    console.log("entre al save ")
     if (this.form.valid) {
       const product = this.form.value;
       this.productsService.createProduct(product)
@@ -66,10 +70,13 @@ export class FormProductComponent implements OnInit {
   private buildForm() {
     this.form = this.formBuilder.group({
       id: ['', [Validators.required]],
-      title: ['', [Validators.required]],
+      nombre: ['', [Validators.required]],
+      descripcion: ['', [Validators.required]],
+      marca: ['', [Validators.required]],
+      referencia: ['', [Validators.required]],
+      material: ['', [Validators.required]],
       price: ['', [Validators.required, MyValidators.isPriceValid]],
       image: [''],
-      description: ['', [Validators.required]],
     });
   }
 

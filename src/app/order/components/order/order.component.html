@@ -1,8 +1,10 @@
 <mat-horizontal-stepper>
-  <mat-step>
+  <mat-step required>
     <ng-template matStepLabel="">Sus productos</ng-template>
     <div *ngIf="(products$) as productList">
       <p *ngIf="productList.length === 0">No hay productos en el carrito</p>
+      <mat-label>Name</mat-label>
+        <!-- <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required> -->
       <div class="row" *ngFor="let productFor of productList">
         <div class="col-xs-8 col-sm-2 col-md-2 ">
           <div class="box">
@@ -34,14 +36,29 @@
         </div>
       </div>
     </div>
+    <button matStepperNext >Siguiente</button>
   </mat-step>
   <mat-step>
     <ng-template matStepLabel>Datos personales</ng-template>
-    <h1>contenifo</h1>
+    <form [formGroup]="form" >
+      <mat-card-content>
+        <div class="row">
+          <div class="col-xs">
+            <input placeholder="Cedula" formControlName="id" matInput type="text">
+            <br><br>
+            <button mat-raised-button color="primary" (click)="searchDocument()">Consultar</button>
+          </div>
+        </div>
+      </mat-card-content>
+    </form>
+    <button mat-raised-button matStepperPrevious>Back</button>
+    <button mat-raised-button matStepperNext>Next</button>
   </mat-step>
   <mat-step>
     <ng-template matStepLabel>Pago</ng-template>
     <h1>contenifo</h1>
+    <button mat-button matStepperPrevious>Back</button>
+    <button mat-button matStepperNext>Next</button>
   </mat-step>
 </mat-horizontal-stepper>
 

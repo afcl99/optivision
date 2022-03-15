@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Observable } from 'rxjs';
+import { finalize } from 'rxjs/operators';
+
 
 import { Product } from "./../../../core/models/product.model";
 import { ProductsService } from "./../../../core/services/products/products.service";
@@ -15,12 +19,14 @@ export class ProductEditComponent implements OnInit {
 
   form: FormGroup;
   id: number = 0;
+  image$: Observable<any>;
 
   constructor(
     private formBuilder: FormBuilder,
     private productsService:ProductsService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private storage: AngularFireStorage
   ) {
     this.buildForm();
   }
@@ -39,7 +45,8 @@ export class ProductEditComponent implements OnInit {
   saveProduct(event: Event){
     console.log("entre save", this.form.value)
     event.preventDefault();
-    //if (this.form.valid){
+    if (this.form.valid){
+      console.log("entre save valid", this.form.value)
       const product: Product = this.form.value;
       console.log("actualizar ",this.id)
       this.productsService.updateProduct(this.id, product)
@@ -47,17 +54,36 @@ export class ProductEditComponent implements OnInit {
         console.log(newProduct);
         this.router.navigate(['./admin/products'])
       })
-    //}
+    }
+  }
+  uploadFile(event: any) {
+    const file = event.target.files[0];
+    const name = 'image';
+    const fileRef = this.storage.ref(name);
+    const task = this.storage.upload(name, file);
+
+    task.snapshotChanges()
+    .pipe(
+      finalize(() => {
+        this.image$ = fileRef.getDownloadURL();
+        this.image$.subscribe(url => {
+          console.log(url);
+          this.form.get('image').setValue(url);
+        });
+      })
+    )
+    .subscribe();
   }
   private buildForm(){
     this.form = this.formBuilder.group({
-      nombre: ['', [Validators.required]],
       descripcion: ['', [Validators.required]],
+      id: [, Validators.required],
+      image: [''],
       marca: ['', [Validators.required]],
-      referencia: ['', [Validators.required]],
       materiarl: ['', [Validators.required]],
+      nombre: ['', [Validators.required]],
       price: [, [Validators.required, MyValidators.isPriceValid]],
-      image: ''
+      referencia: ['', [Validators.required]],
     })
   }
 
