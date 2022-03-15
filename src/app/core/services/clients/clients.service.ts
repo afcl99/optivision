@@ -17,13 +17,13 @@ export class ClientsService {
     return this.http.get<Client[]>(`${environment.url_api}/listar`);
   }
   getClients(id: number){
-    return this.http.get<Client>(`${environment.url_apiClient}/${id}`);
+    return this.http.get<Client>(`${environment.url_api}/cliente/${id}`);
   }
   getClientByIdentificacion( identificacion: number){
-    return this.http.get<number>(`${environment.url_apiClient}/identificacion/${identificacion}`);
+    return this.http.get<Client>(`${environment.url_api}/cliente/identificacion/${identificacion}`);
   }
   createClients(Clients: Client){
-    return this.http.post(`${environment.url_apiClient}/guardar`, Clients);
+    return this.http.post(`${environment.url_api}/cliente/guardar`, Clients);
   }
   updateClients(id: number, changes: Partial<Client>){
     return this.http.put(`${environment.url_api}/actualizar/${id}`, changes)

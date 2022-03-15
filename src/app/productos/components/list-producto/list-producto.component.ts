@@ -11,7 +11,7 @@ import { CartService } from "./../../../core/services/cart.service";
 export class ListProductoComponent implements OnInit {
   products: Product[]=[];
 
-  @Input() product: Product;
+  /* @Input() product: Product; */
   @Output() productClecked: EventEmitter<any> = new EventEmitter();
 
   constructor(
@@ -28,8 +28,8 @@ export class ListProductoComponent implements OnInit {
     console.log(id);
   }
 
-  addCart(){
-    this.cartService.addCart(this.product)
+  addCart(product:Product){
+    this.cartService.addCart(product)
   }
 
    fetchProduct(){

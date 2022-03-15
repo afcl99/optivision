@@ -1,4 +1,13 @@
-<section class="hero is-primary is-bold is-fullheight">
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide" *ngFor="let img of images">
+      <img class="banner-img" [src]="img" alt="imagen de banner">
+    </div>
+  </div>
+</div>
+
+
+<!-- <section class="hero is-primary is-bold is-fullheight">
   <div class="hero-body">
       <div class="container has-text-centered">
           <p class="title">
@@ -7,3 +16,4 @@
       </div>
   </div>
 </section>
+ -->

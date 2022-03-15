@@ -1,15 +1,15 @@
 export class Client {
-    id: number;
+    id: number = 0;
     tipoIdentificacion: string = "";
     identificacion: number;
     nombres: string = "";
     apellidos: string = "";
     telefono: number;
     email: string= "";
-    edad: number;
+    edad: number = 0;
     sexo: string = "";
     fechaNacimiento: string = "";
     ocupacion: string = "";
-    body: any;
+    direccion: string = "";
   }
   

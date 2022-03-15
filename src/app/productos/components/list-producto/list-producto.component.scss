@@ -11,3 +11,18 @@
     max-width: 100%;
   }
 }
+.container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1em;
+  margin-top: 1em;;
+}
+
+@media only screen and (max-width: 700px) {
+  .container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+    margin-top: 1em;;
+  }
+}

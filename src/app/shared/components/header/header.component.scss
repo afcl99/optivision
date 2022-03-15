@@ -9,3 +9,23 @@ nav > a.active {
 .header-row{
   width: 100%;
 }
+.btn{
+  margin: 0 .3em;
+  background-color: transparent;
+  border: none;
+}
+
+.nav-bar{
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.right{
+  position: relative;
+  left: 60vw;
+  display: flex;
+  gap: 1em;
+}
+.car{
+  color: white;
+}

@@ -6,18 +6,18 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
-import { LoginComponent } from './login/components/login.component';
-import { AddOptometraComponent } from './optometra/add-optometra/add-optometra.component';
-import { EditOptometraComponent } from './optometra/edit-optometra/edit-optometra.component';
-import { ListOptometraComponent } from './optometra/list-optometra/list-optometra.component';
-import { ViewOptometraComponent } from './optometra/view-optometra/view-optometra.component';
+import { LoginComponent } from './auth/components/login/login.component';
+import { AddOptometraComponent } from './admin/optometra/add-optometra/add-optometra.component';
+import { EditOptometraComponent } from './admin/optometra/edit-optometra/edit-optometra.component';
+import { ListOptometraComponent } from './admin/optometra/list-optometra/list-optometra.component';
+import { ViewOptometraComponent } from './admin/optometra/view-optometra/view-optometra.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { AddHistoriaComponent } from './historiaClinica/add-historia/add-historia.component';
 import { ListHistoriaComponent } from './historiaClinica/list-historia/list-historia.component';
-import { AddCitaComponent } from './citas/add-cita/add-cita.component';
-import { ListCitaComponent } from './citas/list-cita/list-cita.component';
-import { EditCitaComponent } from './citas/edit-cita/edit-cita.component';
-import { ViewCitaComponent } from './citas/view-cita/view-cita.component';
+import { AddCitaComponent } from './admin/citas/add-cita/add-cita.component';
+import { ListCitaComponent } from './admin/citas/list-cita/list-cita.component';
+import { EditCitaComponent } from './admin/citas/edit-cita/edit-cita.component';
+import { ViewCitaComponent } from './admin/citas/view-cita/view-cita.component';
 import { ViewHistoriaComponent } from './historiaClinica/view-historia/view-historia.component';
 import { EditHistoriaComponent } from './historiaClinica/edit-historia/edit-historia.component';
 import { ListProductoComponent } from './productos/components/list-producto/list-producto.component';
@@ -26,6 +26,10 @@ import { AddProductoComponent } from './productos/components/add-producto/add-pr
 import { EditProductoComponent } from './productos/components/edit-producto/edit-producto.component';
 import { ViewProductoComponent } from './productos/components/view-producto/view-producto.component';
 import { HttpClientModule } from "@angular/common/http";
+//auntentificacion
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 
 import { MaterialModule } from "./material/material.module";
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -51,20 +55,24 @@ import { DashboardComponent } from './admin/components/dashboard/dashboard.compo
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { ProductsListComponent } from './admin/components/products-list/products-list.component';
-import { FormProductsComponent } from './admin/components/form-products/form-products.component';
+import { FormProductComponent } from './admin/components/form-product/form-product.component';
 
 import { ProductEditComponent } from './admin/components/product-edit/product-edit.component';
 
 import {MatCardModule} from '@angular/material/card';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { CalendarComponent } from './calendar/calendar.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { NgxMatDatetimePickerModule, NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
-
+import { RegisterComponent } from './auth/components/register/register.component';
+import { OrderComponent } from './order/components/order/order.component';
+import { ListClientComponent } from './admin/client/list-client/list-client.component';
+import { AddClientComponent } from './admin/client/add-client/add-client.component';
 
 @NgModule({
   declarations: [
+    RegisterComponent,
+    OrderComponent,
     ProductFormComponent,
     AppComponent,
     HeaderComponent,
@@ -96,9 +104,10 @@ import { NgxMatDatetimePickerModule, NgxMatTimepickerModule } from '@angular-mat
     TableComponent,
     DashboardComponent,
     ProductsListComponent,
-    FormProductsComponent,
+    FormProductComponent,
     ProductEditComponent,
-    CalendarComponent
+    ListClientComponent,
+    AddClientComponent
     //FormProductComponent
   ],
   imports: [

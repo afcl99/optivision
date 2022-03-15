@@ -1,0 +1,298 @@
+<form [formGroup]="formConsulta" (ngSubmit)="saveConsulta($event)">
+    <mat-card> 
+      <mat-card-header>
+        <mat-card-title>Consulta</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+          <mat-card style="width: 88%; background-color: #696969;">
+            <div class="row">
+                <div class="col" style="width: 40%; margin-right: 20%;" >
+                    <mat-form-field>
+                        <input placeholder="Paciente" formControlName="nombres" matInput type="text" readonly>
+                    </mat-form-field>
+                </div>
+            
+                <div class="col" style="width: 40%;">
+                    <mat-form-field>
+                        <input placeholder="TI/CC" formControlName="identificacion" matInput type="text" readonly>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="width: 40%; margin-right: 20%;" >
+                    <mat-form-field>
+                        <input placeholder="Dirección" formControlName="direccion" matInput type="text" readonly>
+                    </mat-form-field>
+                </div>
+            
+                <div class="col" style="width: 40%;">
+                    <mat-form-field>
+                        <input placeholder="Telefono" formControlName="telefono" matInput type="text" readonly>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="width: 40%; margin-right: 20%;" >
+                    <mat-form-field>
+                        <input placeholder="Ocupacion" formControlName="ocupacion" matInput type="text" readonly>
+                    </mat-form-field>
+                </div>
+            
+                <div class="col" style="width: 40%;">
+                    <mat-form-field>
+                        <input placeholder="Edad" formControlName="edad" matInput type="text" readonly>
+                    </mat-form-field>
+                </div>
+            </div>
+          </mat-card>
+        <div class="row">
+            <div class="col-lg">
+                <div class="row">
+                  <mat-form-field>
+                      <input placeholder="Motivo de consulta" formControlName="motivo" matInput type="text" readonly>
+                  </mat-form-field>
+                </div>
+                <div class="row">
+                    <mat-form-field>
+                        <input placeholder="Antecedentes" formControlName="antecedentes" matInput type="text" readonly>
+                    </mat-form-field>
+                  </div>
+                <div class="row">
+                <table style="width:50%">
+                    <tr>
+                        <td>Agudeza visual</td>
+                        <td>AVLSC</td>
+                        <td>AVLPC</td>
+                        <td>PH</td>
+                    </tr>
+                    <tr>
+                        <td>O.D.</td>
+                        <td><mat-radio-group [formControl]="AVLSC_OD">
+                        <mat-radio-button value="true">1</mat-radio-button>
+                        <mat-radio-button value="false">0</mat-radio-button>
+                        </mat-radio-group></td>
+                        <td><mat-radio-group [formControl]="AVLPC_OD">
+                        <mat-radio-button value="true">1</mat-radio-button>
+                        <mat-radio-button value="false">0</mat-radio-button>
+                        </mat-radio-group></td>
+                        <td><mat-radio-group [formControl]="PH_OD">
+                        <mat-radio-button value="true">1</mat-radio-button>
+                        <mat-radio-button value="false">0</mat-radio-button>
+                        </mat-radio-group></td>
+                    </tr>
+                    <tr>
+                        <td>O.I.</td>
+                        <td><mat-radio-group [formControl]="AVLSC_OI">
+                            <mat-radio-button value="true">1</mat-radio-button>
+                            <mat-radio-button value="false">0</mat-radio-button>
+                            </mat-radio-group></td>
+                            <td><mat-radio-group [formControl]="AVLPC_OI">
+                            <mat-radio-button value="true">1</mat-radio-button>
+                            <mat-radio-button value="false">0</mat-radio-button>
+                            </mat-radio-group></td>
+                            <td><mat-radio-group [formControl]="PH_OI">
+                            <mat-radio-button value="true">1</mat-radio-button>
+                            <mat-radio-button value="false">0</mat-radio-button>
+                            </mat-radio-group></td>
+                        </tr>
+                    </table>
+    
+                  
+                  <div>
+                    <table style="width:50%">
+                        <tr>
+                          <td>Lensometria</td>
+                        </tr>
+                        <tr>
+                          <td>O.D.</td>
+                          <td><mat-radio-group [formControl]="LENS_OD">
+                            <mat-radio-button value="true">1</mat-radio-button>
+                            <mat-radio-button value="false">0</mat-radio-button>
+                          </mat-radio-group></td>
+                        <tr>
+                            <td>O.I.</td>
+                            <td><mat-radio-group [formControl]="LENS_OI">
+                                <mat-radio-button value="true">1</mat-radio-button>
+                                <mat-radio-button value="false">0</mat-radio-button>
+                              </mat-radio-group></td>
+                          </tr>
+                      </table>
+                  </div>
+
+                  <div>
+                    <table style="width:50%">
+                        <tr>
+                          <td>Biomicroscopia</td>
+                        </tr>
+                        <tr>
+                          <td>O.D.</td>
+                          <td><mat-radio-group [formControl]="LENS_OD">
+                            <mat-radio-button value="true">1</mat-radio-button>
+                            <mat-radio-button value="false">0</mat-radio-button>
+                          </mat-radio-group></td>
+                        <tr>
+                            <td>O.I.</td>
+                            <td><mat-radio-group [formControl]="LENS_OI">
+                                <mat-radio-button value="true">1</mat-radio-button>
+                                <mat-radio-button value="false">0</mat-radio-button>
+                              </mat-radio-group></td>
+                          </tr>
+                      </table>
+                  </div>
+
+                </div>
+
+                <div class="row" style="margin-top: 20px;">
+                    <div>
+                        <table style="margin-right: 110px;">
+                            <tr>
+                              <td>Queratometria</td>
+                            </tr>
+                            <tr>
+                              <td>O.D.</td>
+                              <td><mat-radio-group [formControl]="QUER_OD">
+                                <mat-radio-button value="true">1</mat-radio-button>
+                                <mat-radio-button value="false">0</mat-radio-button>
+                              </mat-radio-group></td>
+                            <tr>
+                                <td>O.I.</td>
+                                <td><mat-radio-group [formControl]="QUER_OI">
+                                    <mat-radio-button value="true">1</mat-radio-button>
+                                    <mat-radio-button value="false">0</mat-radio-button>
+                                  </mat-radio-group></td>
+                              </tr>
+                          </table>
+                      </div>
+    
+                      <div>
+                        <table style="margin-right: 110px;">
+                            <tr>
+                              <td>Reflejos</td>
+                            </tr>
+                            <tr>
+                              <td>O.D.</td>
+                              <td><mat-radio-group [formControl]="REF_OD">
+                                <mat-radio-button value="true">1</mat-radio-button>
+                                <mat-radio-button value="false">0</mat-radio-button>
+                              </mat-radio-group></td>
+                            <tr>
+                                <td>O.I.</td>
+                                <td><mat-radio-group [formControl]="REF_OI">
+                                    <mat-radio-button value="true">1</mat-radio-button>
+                                    <mat-radio-button value="false">0</mat-radio-button>
+                                  </mat-radio-group></td>
+                              </tr>
+                          </table>
+                      </div>
+
+                      <div>
+                        <table style="margin-right: 110px;">
+                            <tr>
+                              <td>PIO</td>
+                            </tr>
+                            <tr>
+                              <td>O.D.</td>
+                              <td><mat-radio-group [formControl]="PIO_OD">
+                                <mat-radio-button value="true">1</mat-radio-button>
+                                <mat-radio-button value="false">0</mat-radio-button>
+                              </mat-radio-group></td>
+                            <tr>
+                                <td>O.I.</td>
+                                <td><mat-radio-group [formControl]="PIO_OI">
+                                    <mat-radio-button value="true">1</mat-radio-button>
+                                    <mat-radio-button value="false">0</mat-radio-button>
+                                  </mat-radio-group></td>
+                              </tr>
+                          </table>
+                      </div>
+
+                      <div>
+                        <table>
+                            <tr>
+                              <td>Test de color</td>
+                            </tr>
+                            <tr>
+                              <td>Test</td>
+                              <td><mat-radio-group [formControl]="TESTC_OD">
+                                <mat-radio-button value="true">1</mat-radio-button>
+                                <mat-radio-button value="false">0</mat-radio-button>
+                              </mat-radio-group></td>
+                            <tr>
+                                <td>Color</td>
+                                <td><mat-radio-group [formControl]="TESTC_OI">
+                                    <mat-radio-button value="true">1</mat-radio-button>
+                                    <mat-radio-button value="false">0</mat-radio-button>
+                                  </mat-radio-group></td>
+                              </tr>
+                          </table>
+                      </div>
+    
+                    </div>
+                    <div class="row" style="margin-top: 20px;">
+                        <div class="col" style="width: 48%;">
+                            <mat-form-field>
+                                <input placeholder="Disposición" formControlName="disposicion" matInput type="text" readonly>
+                            </mat-form-field>
+                        </div>
+                        <div class="col" style="width: 48%;">
+                        <mat-form-field>
+                            <input placeholder="Remisión" formControlName="remision" matInput type="text" readonly>
+                        </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 20px;">
+                        <div class="col" style="width: 20%;">
+                            <mat-form-field>
+                                <input placeholder="Codigo" formControlName="codigo" matInput type="text" readonly>
+                            </mat-form-field>
+                        </div>
+                        <div class="col" style="width: 79%">
+                        <mat-form-field>
+                            <input placeholder="Diagnostico" formControlName="diagnostico" matInput type="text" readonly>
+                        </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top: 20px;">
+                        <div class="col" style="width: 32%;">
+                            <mat-form-field>
+                                <input placeholder="Control" formControlName="control" matInput type="text" readonly>
+                            </mat-form-field>
+                        </div>
+                        <div class="col" style="width: 32%">
+                        <mat-form-field>
+                            <input placeholder="Tipo de lente" formControlName="tipoLente" matInput type="text" readonly>
+                        </mat-form-field>
+                        </div>
+                        <div class="col" style="width: 30%">
+                        <mat-form-field>
+                            <input placeholder="Distancia pupilar" formControlName="distanciaPupilar" matInput type="text" readonly>
+                        </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top: 20px;">
+                        <div class="col" style="width: 100%;">
+                            <mat-form-field>
+                                <input placeholder="Tratamiento" formControlName="tratamiento" matInput type="text" readonly>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 20px;">
+                        <div class="col" style="width: 100%;">
+                            <mat-form-field>
+                                <input placeholder="Observaciones" formControlName="observaciones" matInput type="text" readonly>
+                            </mat-form-field>
+                        </div>
+                    </div>
+            
+            </div>
+        </div>    
+      </mat-card-content>
+    
+      <mat-card-actions>
+        <button [disabled]="formConsulta.invalid" mat-raised-button type="submit">Guardar</button>
+      </mat-card-actions>
+    </mat-card>
+  
+  </form>
