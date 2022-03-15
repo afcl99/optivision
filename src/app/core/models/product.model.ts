@@ -6,5 +6,5 @@ export class Product {
   referencia: string;
   material: string;
   price: number = 239999;
-  image: string = "../../../assets/images/gafas-fondo.jpg";
+  image: string;
 }

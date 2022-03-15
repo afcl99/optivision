@@ -5,13 +5,13 @@
     </mat-card-header>
   </mat-card>
   <mat-card-content class="mat-elevation-z8 products-table" >
-    <!-- <div class="row">
+    <div class="row">
       <div class="col-xs">
         <mat-form-field>
-          <input placeholder="Id" formControlName="id" matInput type="number">
+          <input readonly="true"placeholder="Id" formControlName="id" matInput type="number">
         </mat-form-field>
       </div>
-    </div> -->
+    </div>
     <div class="row">
       <div class="col-xs">
         <mat-form-field>
@@ -50,6 +50,12 @@
           <p *ngIf="priceField.hasError('price_invalide')">El valor debe ser mayor de $100 </p>
           <!-- <p *ngIf="priceField.hasError('required')">Este campo es requerido </p> -->
         </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs">
+        <img *ngIf="(image$ | async) as image" [src]="image" alt="">
+        <input type="file" (change)="uploadFile($event)">
       </div>
     </div>
     <mat-card-actions class="mat-elevation-z8 products-table">
