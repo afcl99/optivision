@@ -14,18 +14,18 @@ export class ProductsService {
   ) { }
 
   getAllProducts(){
-    return this.http.get<Product[]>(`${environment.url_api}producto/listar`);
+    return this.http.get<Product[]>(`${environment.url_api}/producto/listar`);
   }
   getProduct(id: number){
-    return this.http.get<Product>(`${environment.url_api}/${id}`);
+    return this.http.get<Product>(`${environment.url_api}/producto/${id}`);
   }
   createProduct(product: Product){
-    return this.http.post(`${environment.url_api}/guardar`, product);
+    return this.http.post(`${environment.url_api}/producto/guardar`, product);
   }
   updateProduct(id: number, changes: Partial<Product>){
-    return this.http.put(`${environment.url_api}/actualizar/${id}`, changes)
+    return this.http.put(`${environment.url_api}/producto/actualizar/${id}`, changes)
   }
   deleteProduct(id: number){
-    return this.http.delete(`${environment.url_api}/eliminar/${id}`)
+    return this.http.delete(`${environment.url_api}/producto/eliminar/${id}`)
   }
 }

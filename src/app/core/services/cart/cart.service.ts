@@ -26,7 +26,7 @@ export class CartService {
   }
 
   getProduct(id: number){
-    return this.http.get<Product>(`${environment.url_api}/${id}`);
+    return this.http.get<Product>(`${environment.url_api}/producto/${id}`);
   }
 
   getClient(id: number){

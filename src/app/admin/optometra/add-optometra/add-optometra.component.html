@@ -1,0 +1,62 @@
+<form [formGroup]="formOptometra" (ngSubmit)="saveOptometra($event)">
+  <mat-card> 
+    <mat-card-header>
+      <mat-card-title>Agregar optometra</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+          <div class="col-md">
+              <div class="row">
+                <mat-form-field>
+                    <input placeholder="identificacion" formControlName="identificacion" matInput type="text" required>
+                </mat-form-field>
+              </div>
+              <div class = "row">
+                <mat-form-field appearance="fill">
+                  <mat-label>Tipo de identificación</mat-label>
+                  <select matNativeControl required [formControl]="tipoId">
+                    <option value="CC">Cédula</option>
+                    <option value="CE">Cedula de extranjeria</option>
+                  </select>
+                </mat-form-field>
+              </div>
+              <div class="row">
+                <mat-form-field>
+                    <input placeholder="Nombre" formControlName="nombres" matInput type="text" required>
+                </mat-form-field>
+              </div>
+              <div class="row">
+                <mat-form-field>
+                    <input placeholder="Apellidos" formControlName="apellidos" matInput type="text" required>
+                </mat-form-field>
+              </div>
+              <div class="row">
+                <mat-form-field>
+                    <input placeholder="Telefono" formControlName="telefono" matInput type="text" required>
+                </mat-form-field>
+              </div>
+              <div class="row">
+                <mat-form-field>
+                    <input placeholder="Direccion" formControlName="direccion" matInput type="text" required>
+                </mat-form-field>
+              </div>
+              <div class="row">
+                <mat-form-field>
+                    <input placeholder="Email" formControlName="email" matInput type="text" required>
+                </mat-form-field>
+              </div>
+              <div class="row">
+                <mat-form-field>
+                    <input placeholder="Contraseña" formControlName="password" matInput type="password" required>
+                </mat-form-field>
+              </div>         
+          </div>
+      </div>    
+    </mat-card-content>
+  
+    <mat-card-actions>
+      <button [disabled]="formOptometra.invalid" mat-raised-button type="submit">Guardar</button>
+    </mat-card-actions>
+  </mat-card>
+
+</form>
