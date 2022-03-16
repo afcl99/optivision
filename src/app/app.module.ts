@@ -68,6 +68,7 @@ import { RegisterComponent } from './auth/components/register/register.component
 import { OrderComponent } from './order/components/order/order.component';
 import { ListClientComponent } from './admin/client/list-client/list-client.component';
 import { AddClientComponent } from './admin/client/add-client/add-client.component';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -135,7 +136,10 @@ import { AddClientComponent } from './admin/client/add-client/add-client.compone
     MatMenuModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFireStorageModule
     //AdminModule
   ],
   providers: [],
