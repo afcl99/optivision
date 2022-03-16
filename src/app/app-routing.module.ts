@@ -25,6 +25,7 @@ import { RegisterComponent } from './auth/components/register/register.component
 import { ListClientComponent } from './admin/client/list-client/list-client.component';
 
 import { ViewCitaComponent } from "./admin/citas/view-cita/view-cita.component";
+import { AddClientComponent } from './admin/client/add-client/add-client.component';
 
 
 const routes: Routes = [
@@ -46,9 +47,6 @@ const routes: Routes = [
     ]
   },
   {path: "forgotPassword", component:ForgotPasswordComponent},
-  //{path: "add-optometra", component:AddOptometraComponent},
-  {path: "edit-optometra/:id", component:EditOptometraComponent},
-  {path: "optometras", component:ListOptometraComponent},
   {path: "add-historia/:id", component:AddHistoriaComponent},
   {path: "list-historia", component:ListHistoriaComponent},
 
@@ -62,11 +60,24 @@ const routes: Routes = [
       {path: "products/create", component: FormProductComponent},
       {path: "products/edit/:id", component: ProductEditComponent},
       {path: "clients", component: ListClientComponent},
+<<<<<<< HEAD
       {path: "citas", component:ListCitaComponent},
       {path: "order", component: OrderComponent},
       {path: "add-cita", component:AddCitaComponent},
       {path: "edit-cita/:id",component:EditCitaComponent},
       {path: "clientes",component:ListClientComponent},
+=======
+      {path: "add-cita", component:AddCitaComponent},
+      {path: "edit-cita/:id",component:EditCitaComponent},
+      {path: "citas",component: ListCitaComponent},
+      {path: "clients/create",component: AddClientComponent},
+      {path: "optometras",component: ListOptometraComponent},
+      {path: "create", component:AddOptometraComponent},
+      {path: "edit-optometra/:id", component:EditOptometraComponent},
+
+
+
+>>>>>>> 91291fb24e04b0c4556efe716915755b38772b3e
     ]
 
   },

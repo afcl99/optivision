@@ -21,11 +21,8 @@
         <div class="col-xs-12 col-sm-5 col-md-5 ">
           {{"Id:"}}
           <div class="box">
-<<<<<<< HEAD
             {{"--"}}
             <title>Id del producto</title>
-=======
->>>>>>> 1770f9bc7bc78af46ef05856a2eb814d2e518c5c
             {{productFor.id}}
           </div>
         </div>
@@ -47,9 +44,9 @@
       <mat-card-content>
         <div class="row">
           <div class="col-xs">
-            <input placeholder="Cedula" formControlName="id" matInput type="text">
+            <input placeholder="Id" formControlName="id" matInput type="text">
             <br><br>
-            <button mat-raised-button color="primary" (click)="searchDocument()">Consultar</button>
+            <button mat-raised-button color="primary" (click)="searchDocument($event)">Consultar</button>
           </div>
         </div>
       </mat-card-content>
