@@ -41,6 +41,7 @@ const routes: Routes = [
       {path: "add-cita", component:AddCitaComponent},
       {path: "edit-cita/:id",component:EditCitaComponent},
       {path: "clientes",component:ListClientComponent},
+      {path: "add-consulta/:id",component:AddHistoriaComponent},
     ]
   },
   {path: "forgotPassword", component:ForgotPasswordComponent},
