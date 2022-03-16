@@ -17,18 +17,18 @@ export class ListClientComponent implements OnInit {
     private route: Router,
     private clientService: ClientsService,
   ) { }
-  
+
   ngOnInit(): void {
     this.fetchOptometras()
   }
   fetchOptometras(){
     this.clientService.getAllClients()
     .subscribe((listClientes) => {
-      this.clientes = listClientes;            
+      this.clientes = listClientes;
       });
   }
   deleteClient(id: number){
     this.clientService.deleteClients(id).subscribe();
-    window.location.reload();
+    //window.location.reload();
   }
 }

@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { Product } from 'src/app/core/models/product.model';
 import { CartService } from 'src/app/core/services/cart/cart.service';
 import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MyValidators } from 'src/app/utilis/validators';
 import { ClientsService } from "./../../../core/services/clients/clients.service";
 import { Client } from 'src/app/core/models/client.model';
@@ -25,19 +25,31 @@ export class OrderComponent implements OnInit {
 
   products$: Product[];
   form: FormGroup;
-  id: number;
   client: Client;
+  id: number = 0;
+  formOptometra = new FormGroup({
+    tipoId: new FormControl(''),
+    nombres: new FormControl(''),
+    apellidos: new FormControl(''),
+    telefono: new FormControl(''),
+    direccion: new FormControl(''),
+    identificacion: new FormControl(''),
+    email: new FormControl(''),
+    password: new FormControl('')
+  });
 
   constructor(
     private formBuilder: FormBuilder,
     private cartService: CartService,
     private clientService: ClientsService
   ) {
+
     this.buildForm();
     this.cartService.car$.subscribe((res)=>{
       this.products$ = res;
       console.log(this.products$)
     });
+    console.log(this.products$),
     console.log(this.products$)
    }
 

@@ -39,10 +39,10 @@ export class AddOptometraComponent implements OnInit {
         rol: "OPTOMETRA",
         estado: "true",
         tipoIdentificacion: this.tipoId.value
-        
+
       });
       const employee = this.formOptometra.value;
-      /* this.EmployeeService.getEmployeeByIdentificacion(this.formOptometra.get('identificacion').value).subscribe((res) => 
+      /* this.EmployeeService.getEmployeeByIdentificacion(this.formOptometra.get('identificacion').value).subscribe((res) =>
       {
         if(res.id != -1){
           this.EmployeeService.createEmployee(employee).subscribe();
@@ -54,9 +54,9 @@ export class AddOptometraComponent implements OnInit {
       ) */
 
       this.EmployeeService.createEmployee(employee).subscribe();
-      this.route.navigate(['../optometras'])
-    } 
-      
+      this.route.navigate(['../admin/optometras'])
+    }
+
   }
 
   private  buildForm(){

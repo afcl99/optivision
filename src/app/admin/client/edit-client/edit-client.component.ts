@@ -28,14 +28,14 @@ export class EditClientComponent implements OnInit {
     private clientService:ClientsService,
     private router: Router,
     private activatedRoute: ActivatedRoute
-  ) { 
+  ) {
     this.buildForm();
   }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params: Params)=>{
       this.id = params["id"];
-      this.clientService.getClientByIdentificacion(this.id)
+      this.clientService.getClients(this.id)
       .subscribe(employee => {
             this.formCliente.patchValue({
               identificacion: employee.identificacion,
@@ -49,9 +49,9 @@ export class EditClientComponent implements OnInit {
           }
         )
       });
-    } 
-    
-  
+    }
+
+
   private buildForm(){
     this.formCliente = this.formBuilder.group ({
       identificacion: [''],

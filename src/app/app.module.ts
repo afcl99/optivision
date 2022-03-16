@@ -119,7 +119,7 @@ import { EditClientComponent } from './admin/client/edit-client/edit-client.comp
     //FormProductComponent
   ],
   imports: [
-    
+
     NgxMatTimepickerModule,
     NgxMatDatetimePickerModule,
     BrowserModule,
@@ -147,6 +147,9 @@ import { EditClientComponent } from './admin/client/edit-client/edit-client.comp
     MatFormFieldModule,
     CommonModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFireStorageModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth())
   ],

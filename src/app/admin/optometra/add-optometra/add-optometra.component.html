@@ -1,5 +1,5 @@
 <form [formGroup]="formOptometra" (ngSubmit)="saveOptometra($event)">
-  <mat-card> 
+  <mat-card>
     <mat-card-header>
       <mat-card-title>Agregar optometra</mat-card-title>
     </mat-card-header>
@@ -49,14 +49,14 @@
                 <mat-form-field>
                     <input placeholder="Contraseña" formControlName="password" matInput type="password" required>
                 </mat-form-field>
-              </div>         
+              </div>
           </div>
-      </div>    
+      </div>
     </mat-card-content>
-  
+
     <mat-card-actions>
       <button [disabled]="formOptometra.invalid" mat-raised-button type="submit">Guardar</button>
     </mat-card-actions>
   </mat-card>
-
+  <router-outlet></router-outlet>
 </form>

@@ -42,7 +42,7 @@ export class AddCitaComponent implements OnInit {
       });
       const client = this.formCita.value;
       this.ClientsService.getClientByIdentificacion(this.formCita.get('identificacion').value).subscribe((res) => {
-        
+
         if(res.id != -1){
 
             this.formCita.patchValue({
@@ -50,8 +50,8 @@ export class AddCitaComponent implements OnInit {
             });
             const cita = this.formCita.value;
             this.CitasService.createCita(cita).subscribe((newCita) => {
-            this.route.navigate(['../citas'])
-          })  
+            this.route.navigate(['../admin/citas'])
+          })
         }else{
             this.ClientsService.createClients(client).subscribe((newClient) => {
             Object.values(newClient);
@@ -60,11 +60,11 @@ export class AddCitaComponent implements OnInit {
             });
             const cita = this.formCita.value;
             this.CitasService.createCita(cita).subscribe((newCita) => {
-            this.route.navigate(['../citas'])
+            this.route.navigate(['../admin/citas'])
           })
-          }) 
+          })
         };
-      });          
+      });
     }
   }
   private  buildForm(){

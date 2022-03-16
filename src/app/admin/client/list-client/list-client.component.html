@@ -1,9 +1,5 @@
 
-<<<<<<< HEAD
-<a mat-raised-button routerLink="/add-client"> Agregar cliente</a>
-=======
 <a mat-raised-button routerLink="create"> Agregar cliente</a>
->>>>>>> 91291fb24e04b0c4556efe716915755b38772b3e
 <table mat-table [dataSource]="clientes" class="mat-elevation-z8 products-table">
   <ng-container matColumnDef="Identificacion">
     <th mat-header-cell *matHeaderCellDef > Identificacion </th>
@@ -28,7 +24,7 @@
   <ng-container matColumnDef="actions">
     <th mat-header-cell *matHeaderCellDef > Acciones </th>
     <td mat-cell *matCellDef="let cliente">
-      <a mat-raised-button [routerLink]="['/edit-optometra', cliente.id]">Editar</a>
+      <a mat-raised-button [routerLink]="['edit', cliente.id]">Editar</a>
       <button mat-raised-button color="warn" (click)="deleteClient(cliente.id)">Eliminar</button>
     </td>
   </ng-container>

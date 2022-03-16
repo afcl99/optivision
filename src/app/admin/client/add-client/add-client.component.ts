@@ -35,12 +35,12 @@ export class AddClientComponent implements OnInit {
     event.preventDefault(); //para evitar que recargue la pagina
     if (this.formClient.valid) {
       this.formClient.patchValue({
- 
+
         tipoIdentificacion: this.tipoId.value
-        
+
       });
       const employee = this.formClient.value;
-      /* this.EmployeeService.getEmployeeByIdentificacion(this.formOptometra.get('identificacion').value).subscribe((res) => 
+      /* this.EmployeeService.getEmployeeByIdentificacion(this.formOptometra.get('identificacion').value).subscribe((res) =>
       {
         if(res.id != -1){
           this.EmployeeService.createEmployee(employee).subscribe();
@@ -52,9 +52,9 @@ export class AddClientComponent implements OnInit {
       ) */
 
       this.clientService.createClients(employee).subscribe();
-      this.route.navigate(['../clientes'])
-    } 
-      
+      this.route.navigate(['../admin/clientes'])
+    }
+
   }
 
   private  buildForm(){

@@ -1,13 +1,13 @@
 <mat-card>
   <mat-card-header >
     <mat-card-title>{{products.nombre | uppercase}}</mat-card-title>
-    <mat-card-subtitle>{{products.price | currency}}</mat-card-subtitle>
+    <mat-card-subtitle>{{products.precio | currency}}</mat-card-subtitle>
   </mat-card-header>
   <div class="crop-image">
     <img src="..s/../../assets/images/gafas-fondo.jpg" alt="">
   </div>
   <mat-card-content>
-    <p>Precio: {{products.price | currency}}</p>
+    <p>Precio: {{products.precio | currency}}</p>
     <p>Descripcion: {{products.descripcion}}</p>
     <p>Marca: {{products.marca}}</p>
     <p>Referencia: {{products.referencia}}</p>

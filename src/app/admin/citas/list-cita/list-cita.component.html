@@ -1,5 +1,5 @@
 
-<a mat-raised-button routerLink="/admin/add-cita"> Agendar cita </a>
+<a mat-raised-button routerLink="create"> Agendar cita </a>
 <table mat-table [dataSource]="citas" class="mat-elevation-z8 products-table">
   <ng-container matColumnDef="Fecha">
     <th mat-header-cell *matHeaderCellDef > Fecha </th>
@@ -16,9 +16,9 @@
   <ng-container matColumnDef="actions">
     <th mat-header-cell *matHeaderCellDef > Acciones </th>
     <td mat-cell *matCellDef="let citas">
-      <a mat-raised-button [routerLink]="['/edit-cita', citas.id]">Editar</a>
+      <a mat-raised-button [routerLink]="['edit-cita', citas.id]">Editar</a>
       <button mat-raised-button color="warn" (click)="deleteCita(citas.id)">Eliminar</button>
-      <a mat-raised-button [routerLink]="['/add-consulta', citas.idCliente]">Consulta</a>
+      <a mat-raised-button [routerLink]="['/admin/consulta', citas.idCliente]">Consulta</a>
     </td>
   </ng-container>
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

@@ -19,19 +19,10 @@
           </div>
         </div>
         <div class="col-xs-12 col-sm-5 col-md-5 ">
-          {{"Id:"}}
-          <div class="box">
-            {{"--"}}
-            <title>Id del producto</title>
-            {{productFor.id}}
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-5 col-md-5 ">
-          {{"--"}}
           {{"Precio:"}}
           <div>
-            <title>Pecio</title>
-            {{productFor.price}}
+            {{"--"}}
+            {{productFor.precio}}
           </div>
         </div>
       </div>
@@ -40,16 +31,54 @@
   </mat-step>
   <mat-step>
     <ng-template matStepLabel>Datos personales</ng-template>
-    <form [formGroup]="form" >
-      <mat-card-content>
-        <div class="row">
-          <div class="col-xs">
-            <input placeholder="Id" formControlName="id" matInput type="text">
-            <br><br>
-            <button mat-raised-button color="primary" (click)="searchDocument($event)">Consultar</button>
+    <form [formGroup]="formOptometra" (ngSubmit)="searchDocument($event)">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Info cliente</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="row">
+              <div class="col-md">
+                  <div class="row">
+                    <mat-form-field>
+                        <input placeholder="identificacion" formControlName="identificacion" matInput type="text" readonly>
+                    </mat-form-field>
+                  </div>
+                  <div class="row">
+                    <mat-form-field>
+                        <input placeholder="Tipo de identificación" formControlName="tipoId" matInput type="text" readonly>
+                    </mat-form-field>
+                  </div>
+                  <div class="row">
+                    <mat-form-field>
+                        <input placeholder="Nombre" formControlName="nombres" matInput type="text" readonly>
+                    </mat-form-field>
+                  </div>
+                  <div class="row">
+                    <mat-form-field>
+                        <input placeholder="Apellidos" formControlName="apellidos" matInput type="text" readonly>
+                    </mat-form-field>
+                  </div>
+                  <div class="row">
+                    <mat-form-field>
+                        <input placeholder="Telefono" formControlName="telefono" matInput type="text" required>
+                    </mat-form-field>
+                  </div>
+                  <div class="row">
+                    <mat-form-field>
+                        <input placeholder="Direccion" formControlName="direccion" matInput type="text" required>
+                    </mat-form-field>
+                  </div>
+                  <div class="row">
+                    <mat-form-field>
+                        <input placeholder="Email" formControlName="email" matInput type="text" required>
+                    </mat-form-field>
+                  </div>
+              </div>
           </div>
-        </div>
-      </mat-card-content>
+        </mat-card-content>
+      </mat-card>
+
     </form>
     <button mat-raised-button matStepperPrevious>Back</button>
     <button mat-raised-button matStepperNext>Next</button>

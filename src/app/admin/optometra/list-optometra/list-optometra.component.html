@@ -31,7 +31,7 @@
   <ng-container matColumnDef="actions">
     <th mat-header-cell *matHeaderCellDef > Acciones </th>
     <td mat-cell *matCellDef="let Optometra">
-      <a mat-raised-button [routerLink]="['/edit-optometra', Optometra.id]">Editar</a>
+      <a mat-raised-button [routerLink]="['edit', Optometra.id]">Editar</a>
       <button mat-raised-button color="warn" (click)="deleteOptometra(Optometra.id)">Eliminar</button>
     </td>
   </ng-container>

@@ -1,6 +1,5 @@
-<p>edit-client works!</p>
 <form [formGroup]="formCliente" (ngSubmit)="saveCliente($event)">
-    <mat-card> 
+    <mat-card>
       <mat-card-header>
         <mat-card-title>Editar Cliente</mat-card-title>
       </mat-card-header>
@@ -41,14 +40,14 @@
                   <mat-form-field>
                       <input placeholder="Email" formControlName="email" matInput type="text" required>
                   </mat-form-field>
-                </div>         
+                </div>
             </div>
-        </div>    
+        </div>
       </mat-card-content>
-    
+
       <mat-card-actions>
         <button [disabled]="formCliente.invalid" mat-raised-button type="submit">Guardar</button>
       </mat-card-actions>
     </mat-card>
-  
+
   </form>

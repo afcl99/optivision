@@ -5,6 +5,6 @@ export class Product {
   marca: string;
   referencia: string;
   material: string;
-  price: number = 239999;
+  precio: number;
   image: string;
 }
