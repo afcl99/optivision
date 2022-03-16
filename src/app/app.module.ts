@@ -68,6 +68,13 @@ import { RegisterComponent } from './auth/components/register/register.component
 import { OrderComponent } from './order/components/order/order.component';
 import { ListClientComponent } from './admin/client/list-client/list-client.component';
 import { AddClientComponent } from './admin/client/add-client/add-client.component';
+import { CommonModule } from '@angular/common';
+import { provideFirebaseApp } from '@angular/fire/app';
+import { initializeApp } from 'firebase/app';
+import { environment } from 'src/environments/environment';
+import { provideAuth } from '@angular/fire/auth';
+import { getAuth } from 'firebase/auth';
+import { AuthService } from './core/services/auth.service';
 
 @NgModule({
   declarations: [
@@ -111,6 +118,7 @@ import { AddClientComponent } from './admin/client/add-client/add-client.compone
     //FormProductComponent
   ],
   imports: [
+    
     NgxMatTimepickerModule,
     NgxMatDatetimePickerModule,
     BrowserModule,
@@ -135,10 +143,13 @@ import { AddClientComponent } from './admin/client/add-client/add-client.compone
     MatMenuModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatFormFieldModule
-    //AdminModule
+    MatFormFieldModule,
+    CommonModule,
+    AppRoutingModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth())
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
