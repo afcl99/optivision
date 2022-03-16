@@ -14,7 +14,7 @@ export class ListCitaComponent implements OnInit {
   citas: Cita[]=[];
   clientes: Client[]=[];
   CitasClientes: any[] =[];
-  displayedColumns: string[] =['Cliente','Fecha', 'Hora', 'Estado', 'actions']
+  displayedColumns: string[] =['Fecha', 'Hora', 'Estado', 'actions']
 
   constructor(
     private route: Router,

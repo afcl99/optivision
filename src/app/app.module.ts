@@ -75,6 +75,8 @@ import { environment } from 'src/environments/environment';
 import { provideAuth } from '@angular/fire/auth';
 import { getAuth } from 'firebase/auth';
 import { AuthService } from './core/services/auth.service';
+import { PruebaComponent } from './prueba/prueba.component';
+import { EditClientComponent } from './admin/client/edit-client/edit-client.component';
 
 @NgModule({
   declarations: [
@@ -114,7 +116,9 @@ import { AuthService } from './core/services/auth.service';
     FormProductComponent,
     ProductEditComponent,
     ListClientComponent,
-    AddClientComponent
+    AddClientComponent,
+    PruebaComponent,
+    EditClientComponent
     //FormProductComponent
   ],
   imports: [

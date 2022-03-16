@@ -36,7 +36,11 @@ const routes: Routes = [
       {path: "products/:id", component:ViewProductoComponent},
       {path: "products", component:ListProductoComponent},
       {path: "add-products", component:AddProductoComponent},
+      {path: "citas", component:ListCitaComponent},
       {path: "order", component: OrderComponent},
+      {path: "add-cita", component:AddCitaComponent},
+      {path: "edit-cita/:id",component:EditCitaComponent},
+      {path: "clientes",component:ListClientComponent},
     ]
   },
   {path: "forgotPassword", component:ForgotPasswordComponent},
@@ -45,11 +49,6 @@ const routes: Routes = [
   {path: "optometras", component:ListOptometraComponent},
   {path: "add-historia/:id", component:AddHistoriaComponent},
   {path: "list-historia", component:ListHistoriaComponent},
-
-  {path: "add-cita", component:AddCitaComponent},
-  {path: "citas",component:ListCitaComponent},
-  {path: "edit-cita/:id",component:EditCitaComponent},
-  {path: "clientes",component:ListClientComponent},
 
   {
     path: "admin",
@@ -63,6 +62,11 @@ const routes: Routes = [
       {path: "products/create", component: FormProductComponent},
       {path: "products/edit/:id", component: ProductEditComponent},
       {path: "clients", component: ListClientComponent},
+      {path: "citas", component:ListCitaComponent},
+      {path: "order", component: OrderComponent},
+      {path: "add-cita", component:AddCitaComponent},
+      {path: "edit-cita/:id",component:EditCitaComponent},
+      {path: "clientes",component:ListClientComponent},
     ]
 
   },

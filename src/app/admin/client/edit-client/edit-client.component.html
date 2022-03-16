@@ -1,33 +1,30 @@
-<form [formGroup]="formClient" (ngSubmit)="saveClient($event)">
+<p>edit-client works!</p>
+<form [formGroup]="formCliente" (ngSubmit)="saveCliente($event)">
     <mat-card> 
       <mat-card-header>
-        <mat-card-title>Agregar cliente</mat-card-title>
+        <mat-card-title>Editar Cliente</mat-card-title>
       </mat-card-header>
       <mat-card-content>
         <div class="row">
             <div class="col-md">
                 <div class="row">
                   <mat-form-field>
-                      <input placeholder="identificacion" formControlName="identificacion" matInput type="text" required>
-                  </mat-form-field>
-                </div>
-                <div class = "row">
-                  <mat-form-field appearance="fill">
-                    <mat-label>Tipo de identificación</mat-label>
-                    <select matNativeControl required [formControl]="tipoId">
-                      <option value="CC">Cédula</option>
-                      <option value="CE">Cedula de extranjeria</option>
-                    </select>
+                      <input placeholder="identificacion" formControlName="identificacion" matInput type="text" readonly>
                   </mat-form-field>
                 </div>
                 <div class="row">
                   <mat-form-field>
-                      <input placeholder="Nombre" formControlName="nombres" matInput type="text" required>
+                      <input placeholder="Tipo de identificación" formControlName="tipoId" matInput type="text" readonly>
                   </mat-form-field>
                 </div>
                 <div class="row">
                   <mat-form-field>
-                      <input placeholder="Apellidos" formControlName="apellidos" matInput type="text" required>
+                      <input placeholder="Nombre" formControlName="nombres" matInput type="text" readonly>
+                  </mat-form-field>
+                </div>
+                <div class="row">
+                  <mat-form-field>
+                      <input placeholder="Apellidos" formControlName="apellidos" matInput type="text" readonly>
                   </mat-form-field>
                 </div>
                 <div class="row">
@@ -44,13 +41,13 @@
                   <mat-form-field>
                       <input placeholder="Email" formControlName="email" matInput type="text" required>
                   </mat-form-field>
-                </div>       
+                </div>         
             </div>
         </div>    
       </mat-card-content>
     
       <mat-card-actions>
-        <button [disabled]="formClient.invalid" mat-raised-button type="submit">Guardar</button>
+        <button [disabled]="formCliente.invalid" mat-raised-button type="submit">Guardar</button>
       </mat-card-actions>
     </mat-card>
   

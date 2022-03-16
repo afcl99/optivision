@@ -20,7 +20,7 @@ export class CitasService {
     return this.http.get<Cita>(`${environment.url_api}/cita/${id}`);
   }
   createCita(Cita: Cita){
-    return this.http.post(`${environment.url_api}/cita/guardar/`, Cita);
+    return this.http.post(`${environment.url_api}/cita/guardar`, Cita);
   }
   updateCita(id: number, changes: Partial<Cita>){
     return this.http.put(`${environment.url_api}/cita/actualizar/${id}`, changes)
