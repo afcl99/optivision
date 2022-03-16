@@ -14,7 +14,7 @@ export class ClientsService {
   ) { }
 
   getAllClients(){
-    return this.http.get<Client[]>(`${environment.url_api}/listar`);
+    return this.http.get<Client[]>(`${environment.url_api}/cliente/listar`);
   }
   getClients(id: number){
     return this.http.get<Client>(`${environment.url_api}/cliente/${id}`);
@@ -26,9 +26,9 @@ export class ClientsService {
     return this.http.post(`${environment.url_api}/cliente/guardar`, Clients);
   }
   updateClients(id: number, changes: Partial<Client>){
-    return this.http.put(`${environment.url_api}/actualizar/${id}`, changes)
+    return this.http.put(`${environment.url_api}/cliente/actualizar/${id}`, changes)
   }
   deleteClients(id: number){
-    return this.http.delete(`${environment.url_api}/eliminar/${id}`)
+    return this.http.delete(`${environment.url_api}/cliente/eliminar/${id}`)
   }
 }

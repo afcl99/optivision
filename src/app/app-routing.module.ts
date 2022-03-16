@@ -13,10 +13,7 @@ import { ListProductoComponent } from "./productos/components/list-producto/list
 import { AddProductoComponent } from "./productos/components/add-producto/add-producto.component";
 import { LayoutComponent } from './layout/layout.component';
 import { AdminGuard } from "./admin.guard";
-import { ProductFormComponent } from './admin/components/product-form/product-form.component';
 import { NavComponent } from './admin/components/nav/nav.component';
-import { TableComponent } from './admin/components/table/table.component';
-import { DashboardComponent } from './admin/components/dashboard/dashboard.component';
 import { ProductsListComponent } from './admin/components/products-list/products-list.component';
 import { FormProductComponent } from './admin/components/form-product/form-product.component';
 import { ProductEditComponent } from './admin/components/product-edit/product-edit.component';
@@ -26,13 +23,17 @@ import { EditCitaComponent } from './admin/citas/edit-cita/edit-cita.component';
 import { OrderComponent } from './order/components/order/order.component';
 import { RegisterComponent } from './auth/components/register/register.component';
 import { ListClientComponent } from './admin/client/list-client/list-client.component';
+
+import { ViewCitaComponent } from "./admin/citas/view-cita/view-cita.component";
+
+
 const routes: Routes = [
   {
     path: "",
     component:LayoutComponent,
     children: [
       {path: "", redirectTo: "home", pathMatch: 'full'},
-      {path: "home", loadChildren: () => import('./home/home.module').then(m => m.HomeModule)},
+      {path: "home", loadChildren: () => import('./home/components/home.module').then(m => m.HomeModule)},
       {path: "products/:id", component:ViewProductoComponent},
       {path: "products", component:ListProductoComponent},
       {path: "add-products", component:AddProductoComponent},
@@ -45,7 +46,7 @@ const routes: Routes = [
     ]
   },
   {path: "forgotPassword", component:ForgotPasswordComponent},
-  {path: "add-optometra", component:AddOptometraComponent},
+  //{path: "add-optometra", component:AddOptometraComponent},
   {path: "edit-optometra/:id", component:EditOptometraComponent},
   {path: "optometras", component:ListOptometraComponent},
   {path: "add-historia/:id", component:AddHistoriaComponent},
@@ -56,9 +57,7 @@ const routes: Routes = [
     canActivate: [AdminGuard],
     component: NavComponent,
     children: [
-      {path: "create", component: ProductFormComponent},
-      {path: "table", component: TableComponent},
-      {path: "dashboard", component: DashboardComponent},
+
       {path: "products", component: ProductsListComponent},
       {path: "products/create", component: FormProductComponent},
       {path: "products/edit/:id", component: ProductEditComponent},

@@ -1,5 +1,5 @@
 <form [formGroup]="formCita" (ngSubmit)="saveCita($event)">
-    <mat-card> 
+    <mat-card>
       <mat-card-header>
         <mat-card-title>Agendar cita</mat-card-title>
       </mat-card-header>
@@ -34,19 +34,20 @@
                 <mat-form-field appearance="outline">
                   <mat-label>Hora</mat-label>
                   <input type="time" matInput formGroupName="hora" id="hora" min="09:00" max="18:00" required>
-                  
-                </mat-form-field>            
+
+                </mat-form-field>
             </div>
-            <div class="col-md">                
+            <div class="col-md">
               <mat-card class="demo-inline-calendar-card">
                 <mat-calendar formGroupName="fecha" [(selected)]="selected" required></mat-calendar></mat-card>
             </div>
-        </div>    
+        </div>
       </mat-card-content>
-    
+
       <mat-card-actions>
         <button [disabled]="formCita.invalid" mat-raised-button type="submit">Guardar</button>
+        <button mat-raised-button routerLink="/admin">Cancelar</button>
       </mat-card-actions>
     </mat-card>
-  
+
   </form>
