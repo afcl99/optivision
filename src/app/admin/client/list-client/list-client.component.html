@@ -1,5 +1,5 @@
 
-<a mat-raised-button routerLink="/add-optometra"> Agregar cliente</a>
+<a mat-raised-button routerLink="create"> Agregar cliente</a>
 <table mat-table [dataSource]="clientes" class="mat-elevation-z8 products-table">
   <ng-container matColumnDef="Identificacion">
     <th mat-header-cell *matHeaderCellDef > Identificacion </th>
@@ -28,9 +28,8 @@
       <button mat-raised-button color="warn" (click)="deleteClient(cliente.id)">Eliminar</button>
     </td>
   </ng-container>
-
-
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  <router-outlet></router-outlet>
 </table>
 

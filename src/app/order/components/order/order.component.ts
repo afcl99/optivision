@@ -5,6 +5,8 @@ import { CartService } from 'src/app/core/services/cart/cart.service';
 import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MyValidators } from 'src/app/utilis/validators';
+import { ClientsService } from "./../../../core/services/clients/clients.service";
+import { Client } from 'src/app/core/models/client.model';
 
 
 
@@ -23,10 +25,13 @@ export class OrderComponent implements OnInit {
 
   products$: Product[];
   form: FormGroup;
+  id: number;
+  client: Client;
 
   constructor(
     private formBuilder: FormBuilder,
-    private cartService: CartService
+    private cartService: CartService,
+    private clientService: ClientsService
   ) {
     this.buildForm();
     this.cartService.car$.subscribe((res)=>{
@@ -40,8 +45,30 @@ export class OrderComponent implements OnInit {
 
   }
 
-  searchDocument(){
-    console.log("searchDocument")
+  searchDocument(event: Event){
+    this.id = this.form.get('id').value
+    this.clientService.getClientByIdentificacion(this.id)
+    .subscribe(clients =>
+      this.client = clients)
+      console.log(this.client)
+      if(this.client.id != -1){
+        this.form.patchValue({
+          identificacion: this.client.identificacion,
+          nombres: this.client.nombres,
+          apellidos: this.client.apellidos,
+          telefono: this.client.telefono,
+          direccion: this.client.direccion
+        });
+      }else{
+        this.form.patchValue({
+          identificacion: "",
+          nombres: "",
+          apellidos: "",
+          telefono: "",
+          direccion: ""
+        });
+      }
+
   }
 
   private buildForm() {
