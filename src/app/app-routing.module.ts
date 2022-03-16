@@ -67,11 +67,11 @@ const routes: Routes = [
 
   },
   {
-    path: "auth",
-/*     component: NavComponent, */
+  path: "auth",
+  /*   component: LayoutComponent, */
     children: [
-      {path: "register", component:RegisterComponent},
       {path: "login", component:LoginComponent},
+      {path: "register", component:RegisterComponent},
     ]
   },
 
