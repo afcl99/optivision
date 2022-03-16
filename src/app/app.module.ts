@@ -23,7 +23,6 @@ import { EditHistoriaComponent } from './historiaClinica/edit-historia/edit-hist
 import { ListProductoComponent } from './productos/components/list-producto/list-producto.component';
 
 import { AddProductoComponent } from './productos/components/add-producto/add-producto.component';
-import { EditProductoComponent } from './productos/components/edit-producto/edit-producto.component';
 import { ViewProductoComponent } from './productos/components/view-producto/view-producto.component';
 import { HttpClientModule } from "@angular/common/http";
 //auntentificacion
@@ -39,7 +38,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { SharedModule } from "./shared/shared.module";
 
 
-import { ProductFormComponent } from './admin/components/product-form/product-form.component';
+/* import { ProductFormComponent } from './admin/components/product-form/product-form.component'; */
 import { NavComponent } from './admin/components/nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -47,11 +46,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { TableComponent } from './admin/components/table/table.component';
+/* import { TableComponent } from './admin/components/table/table.component'; */
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { DashboardComponent } from './admin/components/dashboard/dashboard.component';
+/* import { DashboardComponent } from './admin/components/dashboard/dashboard.component'; */
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { ProductsListComponent } from './admin/components/products-list/products-list.component';
@@ -74,7 +73,7 @@ import { environment } from 'src/environments/environment';
   declarations: [
     RegisterComponent,
     OrderComponent,
-    ProductFormComponent,
+
     AppComponent,
     HeaderComponent,
     FooterComponent,
@@ -102,8 +101,6 @@ import { environment } from 'src/environments/environment';
     HighlightDirective,
     LayoutComponent,
     NavComponent,
-    TableComponent,
-    DashboardComponent,
     ProductsListComponent,
     FormProductComponent,
     ProductEditComponent,

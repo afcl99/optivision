@@ -1,5 +1,6 @@
 
-<a mat-raised-button routerLink="/add-cita"> Agendar cita </a>
+<a mat-raised-button routerLink="/admin/add-cita"> Agendar cita </a>
+{{"llame a add-cita"}}
 <table mat-table [dataSource]="citas" class="mat-elevation-z8 products-table">
   <ng-container matColumnDef="Cliente">
     <th mat-header-cell *matHeaderCellDef > Cliente </th>
@@ -28,4 +29,5 @@
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  <router-outlet></router-outlet>
 </table>
